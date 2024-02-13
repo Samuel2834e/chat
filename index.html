@@ -27,7 +27,7 @@
 
     <form class="form" onsubmit="showChat(event)">
         <div id="cadastroSala">
-            <p id="heading">Simples Cadastro</p>
+            <p id="heading">Simples Cadastro Para Começar a Conversar</p>
             <div class="field" id="fieldOne">
                 <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16">
@@ -75,7 +75,7 @@
 
                 <div class="search-bar">
                     <i class="fa fa-search"></i>
-                    <input type="text" class="ip-search" placeholder="Search" />
+                    <input type="text" class="ip-search" placeholder="Search" id="pesquisarMsg"/>
                 </div>
 
                 <div class="body">
@@ -85,15 +85,16 @@
                         <div class="chat" style="overflow-y: auto;">
                             <div class="chat-content clearfix" id="mensagens" style="overflow-y: auto;">
                                 <span class="friend last" id="msgCaixa">
-                                    Hi, How are You?
+                                    ---- Carregando Mensagens ----
                                     <br>
                                 </span>
+                                
                             </div>
                         </div>
                         <div class="msg-box">
-                            <input type="text" class="ip-msg" placeholder="Escreva Algo" id="messageInput" />
+                            <input type="text" class="ip-msg" placeholder="Escreva Algo" id="messageInput" required />
                             <span class="btn-group">
-                                <button id="sendButton" type="button">
+                                <button id="sendButton" type="submit">
                                     <i class="fa fa-paper-plane"></i>
                                 </button>
                             </span>
