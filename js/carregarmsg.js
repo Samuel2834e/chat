@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 for (let id in data) {
                     let span = document.createElement('span'); // Use <span> instead of <p>
                     span.className = "friend last";
-                    span.innerHTML = "<strong>" + data[id].nome + "</strong>" + "   " + data[id].mensagem;
+                    span.innerHTML = "<strong>@" + data[id].nome + "</strong>" + "   " + data[id].mensagem;
                     divConteudo.appendChild(span);
                 }
             } else {
