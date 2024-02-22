@@ -61,7 +61,9 @@ body {
   position: relative;
 }
 
-
+span.friend.last {
+  font-size: 110%;
+}
 
 
 
