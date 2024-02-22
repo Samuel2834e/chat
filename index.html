@@ -24,6 +24,18 @@
 </head>
 
 <body>
+    <header id="cabecalho">
+        <div class="head clearfix" style="height: 57px;">
+            <span class="messages-notification">
+                <i class="fa fa-comments-o"></i>
+                <span class="count"></span>
+            </span>
+            <img src="logo.png" alt="" srcset="" id="imgLogo">
+            <span class="create-new">
+                <i class="fa fa-pencil-square-o"></i>
+            </span>
+        </div>
+    </header>
 
     <form class="form" onsubmit="showChat(event)">
         <div id="cadastroSala">
@@ -62,16 +74,7 @@
         <div class="container" id="chat">
             <div class="app">
 
-                <div class="head clearfix">
-                    <span class="messages-notification">
-                        <i class="fa fa-comments-o"></i>
-                        <span class="count"></span>
-                    </span>
-                    <span class="title">Dalker</span>
-                    <span class="create-new">
-                        <i class="fa fa-pencil-square-o"></i>
-                    </span>
-                </div>
+        
 
                 <div class="search-bar">
                     <i class="fa fa-search"></i>
@@ -80,9 +83,11 @@
 
                 <div class="body">
 
-
                     <div class="chat-messages">
+                        <a href="#fim" id="seta">↓</a>
                         <div class="chat" style="overflow-y: auto;">
+                        
+
                             <div class="chat-content clearfix" id="mensagens" style="overflow-y: auto;">
                                 <span class="friend last" id="msgCaixa">
                                     ---- Carregando Mensagens ----
@@ -90,6 +95,8 @@
                                 </span>
                                 
                             </div>
+
+                            <div id="fim"></div>
                         </div>
                         <div class="msg-box">
                             <input type="text" class="ip-msg" placeholder="Escreva Algo" id="messageInput" required />

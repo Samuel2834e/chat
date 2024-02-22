@@ -42,6 +42,24 @@ body {
 
 }
 
+#seta {
+  position: relative;
+  right: -98%;
+  bottom: -97%;
+}
+
+#cabecalho {
+  background-color: #271c5d;
+  text-align: center;
+  position: relative;
+}
+
+
+#imgLogo {
+  width: 18%;
+  top: -85px;
+  position: relative;
+}
 
 
 
@@ -426,10 +444,11 @@ div.head span.title {
   width: 100%;
   display: inline-block;
   left: 0;
-  font-size: 16px;
+  font-size: 220%;
   font-weight: 500;
   margin-top: 2px;
-  color: #fff;
+  color: #fffafa;
+  font-family: serif;
 }
 
 div.head span.messages-notification {
@@ -439,7 +458,7 @@ div.head span.messages-notification {
   font-weight: normal;
   margin-left: 15px;
   color: #fff;
-  margin-top: 2px;
+  margin-top: 15px;
 }
 
 div.head span.messages-notification span.count {
@@ -457,11 +476,11 @@ div.head span.messages-notification span.count {
 
 div.head span.create-new {
   float: right;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: normal;
   margin-right: 15px;
   color: #fff;
-  margin-top: 2px;
+  margin-top: 15px;
 }
 
 .clearfix::after {
@@ -836,7 +855,7 @@ div.footer ul li.active {
     height: 900px;
     left: 34%;
     margin: 0px auto;
-      margin-left: auto;
+    margin-left: auto;
     margin-left: -205px;
     display: inline-block;
   }
@@ -881,27 +900,32 @@ div.footer ul li.active {
     border-radius: 5px;
     font-size: 15px;
     box-shadow: 30px 0 0 -15px #a7a4dd, 60px 0 0 -30px #7570c8, -30px 0 0 -15px #a7a4dd, -60px 0 0 -30px #7570c8, 0 0 25px rgba(255, 255, 255, 0.5);
-}
+  }
 
-div.msg-box {
-  position: absolute;
-  width: 73%;
-  bottom: -20%;
-  left: 19%;
-  border-top: 1px solid rgba(8, 8, 9, 0.1);
-  overflow: hidden;
-}
+  div.msg-box {
+    position: absolute;
+    width: 73%;
+    bottom: -20%;
+    left: 19%;
+    border-top: 1px solid rgba(8, 8, 9, 0.1);
+    overflow: hidden;
+  }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 0.4em;
-  border-radius: 25px;
-  transition: .4s ease-in-out;
-}
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    border-radius: 25px;
+    transition: .4s ease-in-out;
+  }
+
+  #imgLogo {
+    top: -81%;
+    width: 42%;
+  }
 
 
 }
