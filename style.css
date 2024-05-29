@@ -36,6 +36,8 @@ body {
   font-size: 15px;
 }
 
+
+
 #sala {
   color: black;
   font-size: 15px;
@@ -305,7 +307,8 @@ span.friend.last {
   border: none;
   outline: none;
   width: 100%;
-  color: #d3d3d3;
+  color: black;
+  font-size: 15px;
 }
 
 .form .btn {
@@ -830,6 +833,51 @@ div.footer ul li.active {
 
 
 
+.rating {
+  position: relative;
+  right: 44%;
+}
+
+.rating:not(:checked) > input {
+  position: absolute;
+  appearance: none;
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 30px;
+  color: #666;
+}
+
+.rating:not(:checked) > label:before {
+  content: "★";
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+  color: #ffa723;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -941,6 +989,12 @@ div.footer ul li.active {
     margin-top: -19%;
   }
 
+  .rating {
+    position: relative;
+    bottom: 16%;
+    left: -27%;
+  }
+  
 }
 
 
@@ -1045,3 +1099,9 @@ div.footer ul li.active {
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
