@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
 export default function conectar (){
 const firebaseConfig = {
   apiKey: "AIzaSyAxum1cxJZjh9PfAyzz2Rh3qsX_aaFAcbE",

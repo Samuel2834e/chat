@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sugestao: sugestao,
             avaliacao: avaliacao
         });
+        window.alert("Avaliação Feita Com Sucesso!")
     }
     
 });

@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const database = getDatabase();
     const mensagensRef = ref(database, 'Mensagens');
     let divConteudo = document.getElementById("salasDiv2");
-
+    let salasAdicionadas = {};
+    mostrarSalas();
     function mostrarSalas() {
         let top5Nos = [];
 
@@ -24,16 +25,20 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('Os 5 nós com mais sub-nós são:');
             top5Nos.forEach(no => console.log(no.id + ': ' + no.count + ' sub-nós'));
 
+            
             top5Nos.forEach(noSpan => {
-                let span = document.createElement('span');
-                span.className = "sala";
-                span.innerHTML = "<strong>" + noSpan.id + "</strong></br>";
-                divConteudo.appendChild(span);
-
+                if (!salasAdicionadas[noSpan.id]) { 
+                    let span = document.createElement('span');
+                    span.className = "sala";
+                    span.innerHTML = "<strong>" + noSpan.id + "</strong></br>";
+                    divConteudo.appendChild(span);
+                    salasAdicionadas[noSpan.id] = true; 
+                    
+                }
             });
         });
 
     }
 
-    mostrarSalas();
+
 });
