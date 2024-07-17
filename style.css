@@ -11,6 +11,58 @@
   color: black;
 }
 
+#footer{
+  background-color: #271c5d;
+  bottom: 0%;
+  position: fixed;
+  width: 100%;
+}
+
+#imgMsgEnviada{
+  max-width: 15%;
+  margin-left: 7%;
+}
+
+#imgConfig{
+  width: 32px;
+  top: -5px;
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffffd1;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 body {
@@ -19,7 +71,11 @@ body {
 
 }
 
-
+#btnImgText{
+  float: left;
+  left: 5px;
+  top: 34px;
+}
 
 #fieldOne {
   margin-bottom: 40px;
@@ -59,8 +115,10 @@ body {
 
 #imgLogo {
   width: 18%;
-  top: -85px;
+  top: 1px;
   position: relative;
+  left: 2%;
+  margin-left: 0%;
 }
 
 span.friend.last {
@@ -73,6 +131,11 @@ span.friend.last {
   margin-top: -6%;
 }
 
+#btnFecharModal {
+  left: 31%;   
+  position: relative;   
+  width: 39%;
+}
 
 
 .btn-class-name {
@@ -242,6 +305,20 @@ span.friend.last {
   transition: all 0.3s;
 }
 
+#sendImgBtn{
+  width: fit-content;
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 2px 7px;
+}
+
 #sendButton svg {
   height: 18px;
   transition: all 0.3s;
@@ -279,7 +356,7 @@ span.friend.last {
   margin: 2em;
   color: rgb(255, 255, 255);
   font-size: 1.5em;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .field {
@@ -371,6 +448,150 @@ span.friend.last {
 }
 
 
+
+
+
+
+.reject-checkbox .checkbox-wrapper * {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+.reject-checkbox .checkbox-wrapper input[type="checkbox"] {
+  display: none;
+}
+.reject-checkbox .checkbox-wrapper label {
+  --size: 30px;
+  --shadow: calc(var(--size) * 0.07) calc(var(--size) * 0.1);
+  position: relative;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  margin: 0 auto;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  border-radius: 50%;
+  box-shadow: 0 var(--shadow) #ffbeb8;
+  cursor: pointer;
+  transition: 0.2s ease transform, 0.2s ease background-color,
+    0.2s ease box-shadow;
+  overflow: hidden;
+  z-index: 1;
+}
+.reject-checkbox .checkbox-wrapper label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: calc(var(--size) * 0.7);
+  height: calc(var(--size) * 0.7);
+  margin: 0 auto;
+  background-color: #fff;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  box-shadow: inset 0 var(--shadow) #ffbeb8;
+  transition: 0.2s ease width, 0.2s ease height;
+}
+.reject-checkbox .checkbox-wrapper label:hover:before {
+  width: calc(var(--size) * 0.55);
+  height: calc(var(--size) * 0.55);
+  box-shadow: inset 0 var(--shadow) #ff9d96;
+}
+.reject-checkbox .checkbox-wrapper label:active {
+  transform: scale(0.9);
+}
+.reject-checkbox .checkbox-wrapper .tick_mark {
+  position: absolute;
+  top: 9px;
+  left: 2px;
+  right: 0;
+  width: calc(var(--size) * 0.6);
+  height: calc(var(--size) * 0.6);
+  margin: 0 auto;
+  margin-left: calc(var(--size) * 0.14);
+  transform: rotateZ(-92deg);
+}
+.reject-checkbox .checkbox-wrapper .tick_mark:before,
+.reject-checkbox .checkbox-wrapper .tick_mark:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  border-radius: 2px;
+  opacity: 0;
+  transition: 0.2s ease transform, 0.2s ease opacity;
+}
+.reject-checkbox .checkbox-wrapper .tick_mark:before {
+  left: 0;
+  bottom: 0;
+  width: calc(var(--size) * 0.1);
+  height: calc(var(--size) * 0.3);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.23);
+  transform: translateY(calc(var(--size) * -0.68));
+}
+.reject-checkbox .checkbox-wrapper .tick_mark:after {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(var(--size) * 0.1);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.23);
+  transform: translateX(calc(var(--size) * 0.78));
+}
+.reject-checkbox .checkbox-wrapper input[type="checkbox"]:checked + label {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #ffffff 0%,
+    #ffffff 46%,
+    #ffffff 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.reject-checkbox
+  .checkbox-wrapper
+  input[type="checkbox"]:checked
+  + label:before {
+  width: 0;
+  height: 0;
+}
+
+.reject-checkbox
+  .checkbox-wrapper
+  input[type="checkbox"]:checked
+  + label
+  .tick_mark:before,
+.reject-checkbox
+  .checkbox-wrapper
+  input[type="checkbox"]:checked
+  + label
+  .tick_mark:after {
+  background-color: #fff;
+  width: calc(var(--size) * 0.4);
+  height: calc(var(--size) * 0.1);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.reject-checkbox
+  .checkbox-wrapper
+  input[type="checkbox"]:checked
+  + label
+  .tick_mark:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.reject-checkbox
+  .checkbox-wrapper
+  input[type="checkbox"]:checked
+  + label
+  .tick_mark:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 
 
 
@@ -665,7 +886,7 @@ div.chat-messages div.chat {
   /* Use uma porcentagem responsiva */
   max-width: 1145px;
   /* Defina um valor máximo */
-  height: 272px;
+  height: 330px;
   background: #fcfcfe;
   left: 50%;
   /* Centralize horizontalmente */
@@ -673,7 +894,7 @@ div.chat-messages div.chat {
   padding: 20px;
   border-radius: 5px;
   font-size: 15px;
-  box-shadow: 30px 0 0 -15px #a7a4dd, 60px 0 0 -30px #7570c8, -30px 0 0 -15px #a7a4dd, -60px 0 0 -30px #7570c8, 0 0 25px rgba(255, 255, 255, 0.5);
+  box-shadow: 30px 0 0 -15px #d0cfd471, 60px 0 0 -30px #d0cfd471, -30px 0 0 -15px #d0cfd471, -60px 0 0 -30px #d0cfd471, 0 0 25px rgba(255, 255, 255, 0.5);
 }
 
 div.chat div.chat-content>span {
@@ -682,12 +903,12 @@ div.chat div.chat-content>span {
 
 div.chat div.chat-content span.friend {
   position: relative;
-  width: 70%;
+  width: 97%;
   height: auto;
   display: inline-block;
   background: #fff;
   padding: 10px;
-  padding-bottom: 25px;
+  padding-bottom: 18px;
   box-shadow: 2px 2px 20px -2px rgba(60, 51, 176, 0.2);
   color: rgba(60, 51, 176, 1);
 }
@@ -762,6 +983,8 @@ div.msg-box .ip-msg {
   color: rgba(60, 51, 176, 0.9);
   border: none;
   background: rgba(0, 0, 0, 0.03);
+
+  background-color: #e3e3e6e0;
 }
 
 div.msg-box .ip-msg::placeholder {
@@ -948,21 +1171,21 @@ div.footer ul li.active {
   div.chat-messages div.chat {
     position: relative;
     width: 65%;
-    height: 247px;
+    height: 347px;
     background: #fcfcfe;
     left: 180%;
     margin-left: -123%;
     padding: 20px;
     border-radius: 5px;
     font-size: 15px;
-    box-shadow: 30px 0 0 -15px #a7a4dd, 60px 0 0 -30px #7570c8, -30px 0 0 -15px #a7a4dd, -60px 0 0 -30px #7570c8, 0 0 25px rgba(255, 255, 255, 0.5);
+    box-shadow: 30px 0 0 -15px #d0cfd471, 60px 0 0 -30px #d0cfd471, -30px 0 0 -15px #d0cfd471, -60px 0 0 -30px #d0cfd471, 0 0 25px rgba(255, 255, 255, 0.5);
   }
 
   div.msg-box {
     position: absolute;
-    width: 73%;
+    width: 67%;
     bottom: -20%;
-    left: 19%;
+    left: 27%;
     border-top: 1px solid rgba(8, 8, 9, 0.1);
     overflow: hidden;
   }
@@ -979,8 +1202,9 @@ div.footer ul li.active {
   }
 
   #imgLogo {
-    top: -81%;
-    width: 42%;
+    top: 8%;
+    width: 57%;
+    margin-left: 7%;
   }
 
   #salasDiv {
@@ -993,6 +1217,37 @@ div.footer ul li.active {
     position: relative;
     bottom: 16%;
     left: -27%;
+  }
+
+  #btnImgText{
+    float: left;
+    left: 72px;
+    top: 39px;
+  }
+
+  #imgMsgEnviada{
+    max-width: 65%;
+  }
+
+  div.chat div.chat-content span.friend {
+    position: relative;
+    width: 92%;
+    height: auto;
+    display: inline-block;
+    background: #fff;
+    padding: 10px;
+    padding-bottom: 25px;
+    box-shadow: 2px 2px 20px -2px rgba(60, 51, 176, 0.2);
+    color: rgba(60, 51, 176, 1);
+  }
+
+  #dt {
+    font-size: 73%;
+    margin: 2%;
+  }
+  
+  #imgMsgEnviada{
+    margin-left: 24%;
   }
   
 }
@@ -1031,7 +1286,7 @@ div.footer ul li.active {
   top: 0;
   margin-left: -50%;
   margin-top: -70%;
-  background: linear-gradient(744deg,#af40ff,#5b42f3 60%,#00ddeb);
+  background: linear-gradient(744deg,#fff,#c7c3dd3a 60%,#8ba6a844);
 }
 
 .icon {

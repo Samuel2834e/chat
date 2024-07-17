@@ -12,32 +12,32 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
     <script type="module" src="js/mostrarSalas.js"></script>
-    <script>
-        function showChat(event) {
-            event.preventDefault();
-            document.getElementById('chat').style.display = 'block';
-            document.getElementById('op').style.display = 'block';
-            
-        }
-        function mostrarSalas() {
-            let salasDiv = document.getElementById("salasDiv");
-            if (salasDiv.style.display === "none"){
-                salasDiv.style.display = "block"; 
-            } else {
-                salasDiv.style.display = "none"; 
-            }
-            
-        }
-    </script>
+
 
 </head>
 
 <body>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <h2>Configurações</h2><br>
+            <label for="fontSize">Tamanho da Fonte:</label>
+            <button onclick="aumentarFonte()">Aumentar</button>
+            <button onclick="diminuirFonte()">Diminuir</button>
+            <br><br>
+            <label for="bgColor">Cor de Fundo:</label>
+            <input type="color" id="bgColor" onchange="mudarCor()"><br><br>
+            <button onclick="fecharModal()" id="btnFecharModal">Fechar</button>
+        </div>
+    </div>
+
     <header id="cabecalho">
         <div class="head clearfix" style="height: 57px;">
-            <img src="logo.png" alt="" srcset="" id="imgLogo">
+            <img src="logo2.png" alt="" srcset="" id="imgLogo">
             <span class="create-new" onclick="window.location.href = 'index.html'">
                 <i class="fa fa-pencil-square-o"></i>
+            </span>
+            <span class="create-new">
+                <img src="config.png" id="imgConfig">
             </span>
         </div>
     </header>
@@ -90,7 +90,14 @@
             </div>
     </form>
     </div>
+    <div class="chat" style="overflow-y: auto; display: none;" id="chatMsgs"> </div>
+    <div class="app" id="appMsgs" style="display: none;"></div>
 
+    <footer id="footer">
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.774); font-family: 'Courier New', monospace;">© 2024 Samuel. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/config.js"></script>
 
 </body>
 

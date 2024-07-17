@@ -9,68 +9,74 @@
     <script type="module" src="js/conexao.js"></script>
     <script type="module" src="js/enviarmsg.js"></script>
     <script type="module" src="js/carregarmsg.js"></script>
+
+    <script type="module" src="js/uploadImg.js"></script>
+
     <link rel="stylesheet" href="style.css">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
     <script type="module" src="js/mostrarSalas.js"></script>
-    <script>
-        function showChat(event) {
-            event.preventDefault();
-            document.getElementById('chat').style.display = 'block';
-            document.getElementById('op').style.display = 'block';
-            
-        }
-        function mostrarSalas() {
-            let salasDiv = document.getElementById("salasDiv");
-            if (salasDiv.style.display === "none"){
-                salasDiv.style.display = "block"; 
-            } else {
-                salasDiv.style.display = "none"; 
-            }
-            
-        }
-    </script>
+    <script src="js/mostrarDiv.js"></script>
 
 </head>
 
 <body>
+
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <h2>Configurações</h2><br>
+            <label for="fontSize">Tamanho da Fonte:</label>
+            <button onclick="aumentarFonte()">Aumentar</button>
+            <button onclick="diminuirFonte()">Diminuir</button>
+            <br><br>
+            <label for="bgColor">Cor de Fundo:</label>
+            <input type="color" id="bgColor" onchange="mudarCor()"><br><br>
+            <button onclick="fecharModal()" id="btnFecharModal">Fechar</button>
+        </div>
+    </div>
+
+
     <header id="cabecalho">
         <div class="head clearfix" style="height: 57px;">
             <span class="messages-notification" onclick="mostrarSalas()" id="msgSalasAtivas">
                 <i class="fa fa-comments-o"></i>
                 <span class="count"></span>
             </span>
-            <img src="logo.png" alt="" srcset="" id="imgLogo">
+            <img src="logo2.png" alt="" srcset="" id="imgLogo">
             <span class="create-new" onclick="window.location.href = 'suggest.html'">
                 <i class="fa fa-pencil-square-o"></i>
+            </span>
+            <span class="create-new">
+                <img src="config.png" id="imgConfig">
             </span>
         </div>
     </header>
 
-    <div id="salasDiv" style="display: none;">
-        <div class="e-card playing">
-            <div class="image"></div>
-    
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            
-          
-                <div class="infotop">
-          
-     
-            Top Salas
-          <br>
-          <div id="salasDiv2" class="name" >
 
-          </div>
+    <div id="salasDiv" style="display: none;">
+        <div class="e-card playing" id="cardWave">
+            <div class="image"></div>
+
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+
+
+            <div class="infotop">
+
+
+                Top Salas
+                <br>
+                <div id="salasDiv2" class="name">
+
+                </div>
             </div>
-          </div>
+        </div>
     </div>
 
     <form class="form" onsubmit="showChat(event)">
         <div id="cadastroSala">
-            <p id="heading">Cadastre-se</p>
+            <p id="heading">Log In</p>
             <div class="field" id="fieldOne">
                 <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16">
@@ -79,10 +85,10 @@
                     </path>
                 </svg>
                 <input autocomplete="off" placeholder="Seu Nome" class="input-field" type="text" id="nome" required>
-                
-                
+
+
             </div>
-            
+
             <div class="field" id="fieldTwo">
                 <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16">
@@ -92,60 +98,107 @@
                 </svg>
                 <input placeholder="Numero da Sala" class="input-field" type="number" id="sala" required>
             </div>
+
             <div class="btn">
 
                 <button class="btn-class-name" id="showChatBtn">
                     <span class="back"></span>
                     <span class="front"></span>
-                  </button>
+                </button>
             </div>
+
     </form>
     </div>
     <form class="form">
         <div class="container" id="chat">
-            <div class="app">
+            <div class="app" id="appMsgs">
 
-        
+
 
                 <div class="search-bar">
                     <i class="fa fa-search"></i>
-                    <input type="text" class="ip-search" placeholder="Search" id="pesquisarMsg"/>
+                    <input type="text" class="ip-search" placeholder="Search" id="pesquisarMsg" />
                 </div>
 
                 <div class="body">
 
                     <div class="chat-messages">
-                        <a href="#fim" id="seta">↓</a>
-                        <div class="chat" style="overflow-y: auto;">
-                        
-
+                        <div class="chat" style="overflow-y: auto;" id="chatMsgs">
                             <div class="chat-content clearfix" id="mensagens" style="overflow-y: auto;">
                                 <span class="friend last" id="msgCaixa">
                                     ---- Carregando Mensagens ----
                                     <br>
                                 </span>
-                                
                             </div>
-
                             <div id="fim"></div>
+                        </div>
+                        <div class="col-md-6 reject-checkbox">
+                            <div class="mb-2 text-center">
+                                <div class="checkbox-wrapper">
+                                    <input name="ehs_approval" class="form-check-label custom-radio-label" id="Rejected"
+                                        type="checkbox" onchange="alterarFile()" />
+                                    <label for="Rejected" id="btnImgText">
+                                        <div class="tick_mark">
+                                            <div class="cross"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <div class="msg-box">
                             <input type="text" class="ip-msg" placeholder="Escreva Algo" id="messageInput" required />
+                            <input type="file" class="ip-msg" placeholder="Escreva Algo" id="imgEnviada" required
+                                style="display: none;" />
                             <span class="btn-group">
                                 <button id="sendButton" type="submit">
                                     <i class="fa fa-paper-plane"></i>
                                 </button>
                             </span>
+                            <span class="btn-group">
+                                <button id="sendImgBtn" type="submit" style="display: none;">
+                                    <i class="fa fa-paper-plane"></i>
+                                </button>
+                            </span>
+                            <script>
+                                function alterarFile(params) {
+                                    let cb = document.getElementById("Rejected");
+                                    let msg = document.getElementById("messageInput");
+                                    let file = document.getElementById("imgEnviada");
+                                    let btnMsg = document.getElementById("sendButton");
+                                    let btnImg = document.getElementById("sendImgBtn");
+                                    if (cb.checked) {
+                                        msg.style.display = "none";
+                                        file.style.display = "inline";
+                                        btnMsg.style.display = "none";
+                                        btnImg.style.display = "inline";
+                                    } else {
+                                        msg.style.display = "inline";
+                                        file.style.display = "none";
+                                        btnMsg.style.display = "inline";
+                                        btnImg.style.display = "none";
+                                    }
+                                }
+
+
+                            </script>
                         </div>
                     </div>
+
                 </div>
 
             </div>
         </div>
-
-
     </form>
 
+
+
+
+    <footer id="footer">
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.774); font-family: 'Courier New', monospace;">© 2024
+            Samuel. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/config.js"></script>
 
 </body>
 
