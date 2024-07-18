@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dalker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="module" src="js/conexao.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
+    <script type="module" src="js/dashboard.js"></script>
+
+
+</head>
+
+<body>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <h2>Configurações</h2><br>
+            <label for="fontSize">Tamanho da Fonte:</label>
+            <button onclick="aumentarFonte()">Aumentar</button>
+            <button onclick="diminuirFonte()">Diminuir</button>
+            <br><br>
+            <label for="bgColor">Cor de Fundo:</label>
+            <input type="color" id="bgColor" onchange="mudarCor()"><br><br>
+            <button onclick="fecharModal()" id="btnFecharModal">Fechar</button>
+        </div>
+    </div>
+
+    <header id="cabecalho">
+        <div class="head clearfix" style="height: 57px;">
+            <img src="logo2.png" alt="" srcset="" id="imgLogo">
+            <span class="create-new">
+                <img src="config.png" id="imgConfig">
+            </span>
+        </div>
+    </header>
+
+    <div class="card" style="height: 126px;
+    margin-left: 40px;
+    margin-top: 2%;">
+        <div class="card-title">Número de Conversas</div>
+        <div class="card-subtitle">Número de Conversas ativas no software</div>
+        <hr class="card-divider">
+        <div class="card-footer">
+            <div class="card-price" id="count"><span></span></div>
+            
+        </div>
+    </div>
+    
+
+    <div  id="sugestoes" style="margin-left: 35px;
+  margin-top: 23px; display: flex;
+  flex-wrap: wrap;">Carregando...</div>
+
+
+
+
+
+    <div class="chat" style="overflow-y: auto; display: none;" id="chatMsgs"> </div>
+    <div class="app" id="appMsgs" style="display: none;"></div>
+
+
+    <footer id="footer">
+        <p style="text-align: center; color: rgba(255, 255, 255, 0.774); font-family: 'Courier New', monospace;">© 2024 Samuel. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+
+</body>
+
+</html>
